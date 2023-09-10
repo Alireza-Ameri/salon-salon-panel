@@ -64,7 +64,7 @@ const Login = () => {
         }}
       >
         <img
-          style={{ width: "200px", height: "100px", objectFit: "cover" }}
+          style={{ width: "400px", height: "100px", objectFit: "cover" }}
           src="http://cs5.thorhammer.space/497093901067ead06fad3197107281907.svg"
         />
         <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
