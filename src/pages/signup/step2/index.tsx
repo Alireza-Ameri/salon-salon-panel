@@ -163,14 +163,20 @@ const SignupStep2 = () => {
             </Grid>
 
             <Grid item xs={6}>
+            <Typography component="label" variant="body1">
+                آپلود عکس
+              </Typography>
               <FileUpload />
             </Grid>
             <Grid item xs={6}>
-              اپلود ویدیو
+            <Typography component="label" variant="body1">
+                آپلود ویدیو 
+              </Typography>
+            <FileUpload />
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               نقشه
-            </Grid>
+            </Grid> */}
           </Grid>
           <Button
             type="submit"

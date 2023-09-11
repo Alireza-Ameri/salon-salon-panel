@@ -58,7 +58,9 @@ body {
 label{
   font-family: 'Vazir',sans-serif !important;
 }
-
+* {
+  font-family: "Vazir", sans-serif !important;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

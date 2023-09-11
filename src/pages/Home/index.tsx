@@ -3,6 +3,7 @@ import NavBar from "../../components/navBar";
 import { getProfile } from "../../api";
 import { useUser } from "../../hooks/useUser";
 import { ToastContext } from "../../context/ToastContext";
+import OrderTable from "../../components/orderTable";
 
 function Home() {
   const { addUser } = useUser();
@@ -21,7 +22,7 @@ function Home() {
   return (
     <div>
       <NavBar />
-      <div>salon Panel</div>
+      <OrderTable />
     </div>
   );
 }

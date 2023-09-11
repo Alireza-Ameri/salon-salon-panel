@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/login";
 import SignupStep1 from "./pages/signup/step1";
 import SignupStep2 from "./pages/signup/step2";
+import SalonService from "./pages/salonService";
 
 type Props = {};
 
@@ -24,6 +25,7 @@ const Routes = (props: Props) => {
       <Route path="/salon-signup" element={<SignupStep2 />} />
       <Route element={<PrivateRoutes />}>
         <Route path="/" element={<Home />} />
+        <Route path="/salon-service" element={<SalonService />} />
       </Route>
     </Router>
   );
