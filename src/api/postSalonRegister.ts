@@ -16,7 +16,7 @@ const postSalonRegister = (
   username: string,
   password: string
 ) => {
-  return customAxios.post<IData, IResponse>("/auth/register/salon" , {
+  return customAxios.post<IData, IResponse>("/auth/register/salon-owner" , {
     email,
     username,
     password

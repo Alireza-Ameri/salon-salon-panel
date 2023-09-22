@@ -14,15 +14,11 @@ const OrderTable: FC<IProps> = ({}) => {
   return (
     <Box
       style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        padding: "20px",
-        textAlign:'center'
+        width: "80%",
       }}
     >
       <CssBaseline />
-      <Grid container spacing={1}>
+      <Grid container spacing={2}>
         <Grid item xs={4}>
           <OrderCard />
         </Grid>

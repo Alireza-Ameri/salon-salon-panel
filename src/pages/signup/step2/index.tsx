@@ -166,13 +166,13 @@ const SignupStep2 = () => {
             <Typography component="label" variant="body1">
                 آپلود عکس
               </Typography>
-              <FileUpload />
+              {/* <FileUpload /> */}
             </Grid>
             <Grid item xs={6}>
             <Typography component="label" variant="body1">
                 آپلود ویدیو 
               </Typography>
-            <FileUpload />
+            {/* <FileUpload /> */}
             </Grid>
             {/* <Grid item xs={12}>
               نقشه

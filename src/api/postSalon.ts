@@ -21,7 +21,7 @@ const postSalon = (
   video: string | null,
   map: string | null
 ) => {
-  return customAxios.post<IData, any>("/salon", {
+  return customAxios.post<IData, any>("/salon/register-salon", {
     name,
     phone,
     address,

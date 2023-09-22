@@ -20,10 +20,11 @@ function Home() {
       });
   }, []);
   return (
-    <div>
-      <NavBar />
-      <OrderTable />
-    </div>
+    <NavBar>
+      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <OrderTable />
+      </div>
+    </NavBar>
   );
 }
 
