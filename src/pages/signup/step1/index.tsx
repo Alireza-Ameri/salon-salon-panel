@@ -34,11 +34,13 @@ const SignupStep1 = () => {
     if (password === resetPassword) {
       postSalonRegister(email, userName, password)
         .then((res) => {
-          console.log(res);
           loggedIn(res.data.token);
           login(res.data.user, res.data.token);
-
-          navigate("/salon-signup");
+          setToastMessage("ثبت نام سالن با موفقیت انجام شد");
+          setMessageType("success");
+          setTimeout(() => {
+            navigate("/salon-signup");
+          }, 2000);
         })
         .catch((error) => {
           setToastMessage("ثبت نام سالن با مشکل مواجه شد");

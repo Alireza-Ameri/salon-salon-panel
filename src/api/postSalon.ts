@@ -8,6 +8,8 @@ interface IData {
   image: string | null;
   video: string | null;
   map: string | null;
+  workingHours:string[];
+  serviceIds:number[];
 }
 
 interface IResponse {}
@@ -19,7 +21,9 @@ const postSalon = (
   description: string | null,
   image: string | null,
   video: string | null,
-  map: string | null
+  map: string | null,
+  workingHours:string[],
+  serviceIds:number[],
 ) => {
   return customAxios.post<IData, any>("/salon/register-salon", {
     name,
@@ -29,6 +33,8 @@ const postSalon = (
     image,
     video,
     map,
+    serviceIds,
+    workingHours
   });
 };
 
