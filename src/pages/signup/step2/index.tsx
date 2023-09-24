@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { ToastContext } from "../../../context/ToastContext";
-import { postSalon } from "../../../api";
+import { postSalon, getServices } from "../../../api";
 
 import {
   Button,
@@ -18,6 +18,7 @@ import {
 import { SelectChangeEvent } from "@mui/material/Select";
 import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import FileUpload from "../../../components/uploadFile";
+import { IService } from "../../../types/salon";
 
 const SignupStep2 = () => {
   const { setToastMessage, setMessageType } = useContext(ToastContext);
@@ -32,6 +33,7 @@ const SignupStep2 = () => {
   const [lng, setLng] = useState<string>("");
   const [services, setServices] = useState<number[]>([]);
   const [workingHours, setWorkingHours] = useState<any[]>([]);
+  const [servicesData, setServicesData] = useState<IService[]>([]);
 
   const navigate = useNavigate();
 
@@ -69,7 +71,10 @@ const SignupStep2 = () => {
           console.log(res);
           setToastMessage("ثبت اطلاعات سالن با موفقیت انجام شد");
           setMessageType("success");
-          // navigate("/");
+          setTimeout(() => {
+             navigate("/");
+          }, 2000);
+         
         })
         .catch((error) => {
           setToastMessage("ثبت سالن با مشکل مواجه شد");
@@ -80,6 +85,17 @@ const SignupStep2 = () => {
       setMessageType("error");
     }
   };
+
+  useEffect(() => {
+    getServices()
+      .then((res) => {
+        setServicesData(res.data.services);
+      })
+      .catch((error) => {
+        setToastMessage(" دریافت سرویس ها با مشکل مواجه شد");
+        setMessageType("error");
+      });
+  }, []);
 
   return (
     <Box
@@ -104,7 +120,7 @@ const SignupStep2 = () => {
         />
 
         <Typography component="h1" variant="h5" fontFamily="Vazir">
-          ثبت نام سالن
+          ثبت سالن
         </Typography>
         <Box
           component="form"
@@ -263,9 +279,13 @@ const SignupStep2 = () => {
                 title="سرویس ها"
                 onChange={handleChange}
               >
-                <MenuItem value={1}>کوتاهی مو</MenuItem>
-                <MenuItem value={2}>رنگ کردن مو</MenuItem>
-                <MenuItem value={3}>کراتین مو</MenuItem>
+                {servicesData.map((item: IService) => {
+                  return (
+                    <MenuItem key={item.id} value={item.id}>
+                      {item.name}
+                    </MenuItem>
+                  );
+                })}
               </Select>
             </Grid>
             <Typography component="label" variant="body1">
