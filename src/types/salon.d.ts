@@ -1,3 +1,5 @@
+import { IUser } from "./user";
+
 interface IService {
   id: number;
   createdAt: string;
@@ -23,6 +25,19 @@ interface ISalon {
   map: string;
   workingHours: any[];
   services: IService[];
+}
+
+interface IOrder {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: null;
+  user_id: number;
+  salon_id: number;
+  reservedHour: string;
+  price: string;
+  status: string;
+  time: string;
 }
 
 export { ISalon, IService };

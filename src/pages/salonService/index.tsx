@@ -22,6 +22,7 @@ import { IService } from "../../types/salon";
 
 import FileUpload from "../../components/uploadFile";
 import NavBar from "../../components/navBar";
+import Map from "../../components/map/map";
 
 const SalonService = () => {
   const { setToastMessage, setMessageType } = useContext(ToastContext);
@@ -117,6 +118,9 @@ const SalonService = () => {
         setMessageType("error");
       });
   }, []);
+
+  console.log('lat:' , lat)
+  console.log('lng:' , lng)
 
   return (
     <NavBar>
@@ -260,7 +264,7 @@ const SalonService = () => {
                     variant="body1"
                     marginBottom={5}
                   >
-                    نقشه
+                    لوکیشن ارایشگاه
                   </Typography>
                   <Box
                     sx={{
@@ -270,7 +274,13 @@ const SalonService = () => {
                       alignItems: "center",
                     }}
                   >
-                    <TextField
+                    <Map
+                     lat={lat}
+                     setlat={setLat}
+                     lng={lng}
+                     setlng={setLng}
+                     />
+                    {/* <TextField
                       margin="normal"
                       required
                       fullWidth
@@ -292,7 +302,7 @@ const SalonService = () => {
                       onChange={(e) => setLng(e.target.value)}
                       autoFocus
                       style={{ marginRight: "10px" }}
-                    />
+                    /> */}
                   </Box>
                 </Grid>
                 <Grid item xs={4} marginTop={2}>
