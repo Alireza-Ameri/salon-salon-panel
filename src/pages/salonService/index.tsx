@@ -280,29 +280,6 @@ const SalonService = () => {
                      lng={lng}
                      setlng={setLng}
                      />
-                    {/* <TextField
-                      margin="normal"
-                      required
-                      fullWidth
-                      id="lat"
-                      label="lat"
-                      name="lat"
-                      value={lat}
-                      onChange={(e) => setLat(e.target.value)}
-                      autoFocus
-                    />
-                    <TextField
-                      margin="normal"
-                      required
-                      fullWidth
-                      id="lng"
-                      label="lng"
-                      name="lng"
-                      value={lng}
-                      onChange={(e) => setLng(e.target.value)}
-                      autoFocus
-                      style={{ marginRight: "10px" }}
-                    /> */}
                   </Box>
                 </Grid>
                 <Grid item xs={4} marginTop={2}>

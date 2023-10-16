@@ -23,6 +23,9 @@ interface ISalon {
   image: string | null;
   video: string | null;
   map: string;
+  verified: boolean;
+  start: number;
+  end: number;
   workingHours: any[];
   services: IService[];
 }
@@ -38,6 +41,23 @@ interface IOrder {
   price: string;
   status: string;
   time: string;
+  user:IUser;
+  salon:{
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+    deletedAt: string | null;
+    owner_id: number;
+    name: string;
+    phone: string;
+    address: string;
+    description: string | null;
+    image: string | null;
+    video: string | null;
+    map: string;
+    workingHours: any[];
+  };
+  services: IService[];
 }
 
-export { ISalon, IService };
+export { ISalon, IService , IOrder };

@@ -26,9 +26,9 @@ interface IProps {}
 const OrderTable: FC<IProps> = ({}) => {
   const { setToastMessage, setMessageType } = useContext(ToastContext);
 
-  // const [count, setCount] = useState<number>(0);
-  // const [pg, setpg] = useState<number>(0);
-  // const [limit, setLimit] = useState<number>(5);
+  const [count, setCount] = useState<number>(0);
+  const [pg, setpg] = useState<number>(0);
+  const [limit, setLimit] = useState<number>(5);
   const [search, setSearch] = useState<string>("");
 
   const [showClearIcon, setShowClearIcon] = useState("none");
